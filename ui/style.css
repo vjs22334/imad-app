@@ -1,6 +1,6 @@
 body {
-    font-family: segoe script;
-    background-color: lightgrey;
+    font-family: times new roman;
+    background-color: green;
     margin-top: 75px;
 }
 
@@ -9,8 +9,13 @@ body {
 /*}*/
 
 /*.text-big {*/
-    font-size: 500%;
+    font-size: 200%;
 /*}*/
+.h4 {
+	font-family: segoe script;
+	font-weight: bold;
+	font-size: 100%;
+}
 
 /*.bold {*/
     font-weight: bold;
