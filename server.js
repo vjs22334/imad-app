@@ -8,8 +8,42 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+var articles={
+ article1:{
+     title:'article 1',
+     date:'8/6/17',
+     content:'this is my content'
+ }   
+};
+
+function createtemplate(data)
+{
+    var title=data.title;
+    var date=data.date;
+    var content=data.content;
+    var template=`<html>
+        <head>
+            <title>
+                ${title}
+            </title>
+        </head>
+        <body>
+            <div>
+                <a href="/">homepage</a>
+            </div>
+            <div>
+                <h1>${tilte}</h1>
+                <p>${date}</p>
+                <p>${contrent}</p>
+            </div>
+            
+        </body>
+    </html>`;
+    return template;
+}
 app.get('/article1', function (req, res) {
-  res.sendFile(path.join(__dirname,  'art1.html'));
+    var articlename=req.params.articlename;
+  res.send(createtemplate(articles[articlename]));
 });
 app.get('/article2', function (req, res) {
   res.sendFile(path.join(__dirname,  'art2.html'));
