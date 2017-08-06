@@ -32,7 +32,7 @@ function createtemplate(data)
                 <a href="/">homepage</a>
             </div>
             <div>
-                <h1>${tilte}</h1>
+                <h1>${title}</h1>
                 <p>${date}</p>
                 <p>${contrent}</p>
             </div>
