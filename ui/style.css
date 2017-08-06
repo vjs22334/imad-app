@@ -1,11 +1,11 @@
 body {
-  
+  font-family: impact;
     background-color: green;
     margin-top: 75px;
 }
 
 .center {
-     font-family: impact;
+     
     text-align: center;
     font-weight:bold;
     font-size: 200%;
