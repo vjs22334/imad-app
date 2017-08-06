@@ -6,19 +6,14 @@ body {
 
 .center {
     text-align: center;
-/*}*/
-
-/*.text-big {*/
+    font-weight:bold;
     font-size: 200%;
-/*}*/
+
+}
 .h4 {
 	font-family: segoe script;
 	font-weight: bold;
 	font-size: 100%;
-}
-
-/*.bold {*/
-    font-weight: bold;
 }
 
 .img-medium {
