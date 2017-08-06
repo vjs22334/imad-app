@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 var articles={
-     article1:{
+     "article1":{
      title:'article 1',
      date:'8/6/17',
      content:'this is my content'
@@ -43,7 +43,7 @@ function createtemplate(data)
 }
 app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
-  res.send(createtemplate(article1));
+  res.send(createtemplate(articles[articleName]));
 });
 /*app.get('/article2', function (req, res) {
   res.sendFile(path.join(__dirname,  'art2.html'));
