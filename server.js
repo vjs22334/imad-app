@@ -8,13 +8,13 @@ app.use(morgan('combined'));
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-/*var articles={*/
-var article1={
+var articles={
+     article1:{
      title:'article 1',
      date:'8/6/17',
      content:'this is my content'
  }   
-/*};*/
+};
 
 function createtemplate(data)
 {
@@ -41,8 +41,8 @@ function createtemplate(data)
     </html>`;
     return template;
 }
-app.get('/article1', function (req, res) {
-   /* var articlename=req.params.articlename;*/
+app.get('/:articleName', function (req, res) {
+    var articleName=req.params.articleName;
   res.send(createtemplate(article1));
 });
 /*app.get('/article2', function (req, res) {
