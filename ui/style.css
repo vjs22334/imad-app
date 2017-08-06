@@ -1,17 +1,17 @@
 body {
-   
+   font-family: segoe script;
     background-color: green;
     margin-top: 75px;
 }
 
 .center {
-    font-family: segoe script;
+    
     text-align: center;
     font-weight:bold;
     font-size: 200%;
 
 }
-.h4 {
+.h1 {
 	font-family: calibri;
 	font-weight: bold;
 	font-size: 100%;
