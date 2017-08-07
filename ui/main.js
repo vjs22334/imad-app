@@ -8,6 +8,7 @@ button.onclick=function(){
             if(request.state===200){
                 counter = counter +1;
                 var span=document.getElementById('countervalue');
+                console.log(counter);
                 span.innerHTML = counter.toString();
             }
         }
