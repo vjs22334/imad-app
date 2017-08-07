@@ -4,7 +4,7 @@ button.onclick=function(){
     var request = new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.readyState===XMLHttpRequest.DONE){
-            if(request.state===200)
+            if(request.status===200)
             {
                 var span = document.getElementById('countervalue');
                 span.innerHTML = request.responseText.toString();
