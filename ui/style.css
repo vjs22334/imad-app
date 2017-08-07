@@ -2,6 +2,8 @@ body {
   font-family: impact;
     background-color: blue;
     margin-top: 75px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .center {
