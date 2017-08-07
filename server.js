@@ -13,6 +13,19 @@ var articles={
      title:'article 1',
      date:'8/6/17',
      content:'this is my content'
+     
+    },
+      "article2":{
+     title:'article 2',
+     date:'10/6/17',
+     content:'this is my content'
+     
+    },
+     "article3":{
+     title:'article 3',
+     date:'9/6/17',
+     content:'this is my content'
+     
  }   
 };
 
