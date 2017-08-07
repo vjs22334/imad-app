@@ -6,7 +6,7 @@ button.onclick=function(){
         if(request.readyState===XMLHttpRequest.DONE){
             
                 var span = document.getElementById('countervalue');
-                span.innerHTML = request.responseText;
+                span.innerHTML = request.responseText.toString();
             
         }
     
