@@ -5,10 +5,8 @@ button.onclick=function(){
     request.onreadystatechange = function(){
         if(request.readyState===XMLHttpRequest.DONE){
             if(request.state===200){
-                var counter = request.responseText;
                 var span = document.getElementById('countervalue');
-                console.log(counter);
-                span.innerHTML = counter.toString();
+                span.innerHTML = request.responseText;
             }
         }
     
