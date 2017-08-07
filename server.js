@@ -28,6 +28,11 @@ var articles={
      
  }   
 };
+var counter=0;
+app.get("/counter",function(req,res){
+    counter++;
+    res.send(counter,tostring());
+});
 
 function createtemplate(data)
 {
