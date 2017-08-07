@@ -64,9 +64,10 @@ app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
   res.send(createtemplate(articles[articleName]));
 });
-/*app.get('/article2', function (req, res) {
-  res.sendFile(path.join(__dirname,  'art2.html'));
+app.get('/ui/main.jss',function(req,res){
+    res.sendFile(path.join(__dirname,'ui','main.js'));
 });
+/*
 app.get('/article3', function (req, res) {
   res.sendFile(path.join(__dirname,  'art3.html'));
 });*/
