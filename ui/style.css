@@ -2,17 +2,22 @@ body {
   font-family: impact;
     background-color: lightgrey;
     margin-top: 75px;
-    padding-left: 100px;
-    padding-right: 100px;
+    
 }
 
 .center {
-     max-width: 800px;
-     margin: 0 auto;
-    /*text-align: center;*/
+     
+    text-align: center;
     font-weight: lighter;
     font-size: 100%;
 
+}
+.container{
+    max-width: 800px;
+     margin: 0 auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    
 }
 .h1 {
 	
