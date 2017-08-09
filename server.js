@@ -13,20 +13,20 @@ var articles={
      title:'article 1',
      date:'8/6/17',
      content:'this is my content'
-     
+
     },
       "article2":{
      title:'article 2',
      date:'10/6/17',
      content:'this is my content'
-     
+
     },
      "article3":{
      title:'article 3',
      date:'9/6/17',
      content:'this is my content'
-     
- }   
+
+ }
 };
 var counter = 0;
 app.get("/counter",function(req,res){
@@ -55,11 +55,18 @@ function createtemplate(data)
                 <p>${date}</p>
                 <p>${content}</p>
             </div>
-            
+
         </body>
     </html>`;
     return template;
 }
+var names = [];
+app.get('/submit-name',function(req,res){// /submit-name?name=" ";
+var name=req.query.name;
+names.push(name);
+res.send(JSON.stringify(names));
+});
+
 app.get('/:articleName', function (req, res) {
     var articleName=req.params.articleName;
   res.send(createtemplate(articles[articleName]));
@@ -78,12 +85,6 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
-var names[];
-app.get('/submit-name',function(req,res){// /submit-name?name=" ";
-var name=req.query.name;
-names.push(name);
-res.send(JSON.stringify(names));
-})
 
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80

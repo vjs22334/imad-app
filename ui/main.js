@@ -10,13 +10,34 @@ button.onclick=function(){
                 span.innerHTML = request.responseText.toString();
             }
         }
-    
+
     };
-    request.open('GET',"http://jeyasuryav.imad.hasura-app.io/counter");
+    request.open('GET',"/counter");
     request.send(null);
+  };
+  var sbutton=document.getElementById('submitbtn');
+  sbutton.onclick=function(){
+    console.log("pressed");
+var request1= new XMLHttpRequest();
+  var nameInput =  document.getElementById('nameInput');
+    var name=nameInput.value;
+
+    request1.onreadystatechange = function(){
+      if(request1.readyState===XMLHttpRequest.DONE){
+        if(request1.status===200){
+          var names=[];
+        names=JSON.parse(request1.responseText);
+        var list='';
+        for(var i=0;i<names.length;i++)
+        list +='<li>'+names[i]+'</li>';
+        var ul=document.getElementById('nameList');
+        ul.innerHTML=list;
+       }
+     }
+    };
+    request1.open('GET',"/submit-name?name="+name);
+    request1.send(null);
+  };
     /*counter=counter+1;
     var span = document.getElementById('countervalue');
     span.innerHTML=counter.toString();*/
-    
-    
-};
