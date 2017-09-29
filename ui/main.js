@@ -34,6 +34,7 @@ var request1= new XMLHttpRequest();
         ul.innerHTML=list;
        }
      }
+     this.reset();
     };
     request1.open('GET',"/submit-name?name="+name);
     request1.send(null);
