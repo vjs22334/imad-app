@@ -41,7 +41,7 @@ var request1= new XMLHttpRequest();
      }
      form.reset();
     };
-    request1.open('GET',"/submit-name?name="+name+"comment="+comment);
+    request1.open('GET',"/submit-name?name="+name+"&comment="+comment);
     request1.send(null);
   };
     /*counter=counter+1;
