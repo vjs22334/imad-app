@@ -69,7 +69,10 @@ var name=req.query.name;
 c.names.push(name);
 var comment=req.query.comment;
 c.comment.push(comment);
-res.send(JSON.stringify(c));
+for(var i=0;i<c.names.length;i++)
+        carea +=`<p>${c.comments[i]}+
+        by${c.names[i]}</p><hr/>`;
+res.send(JSON.stringify(carea));
 });
 
 app.get('/:articleName', function (req, res) {
