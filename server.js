@@ -69,6 +69,7 @@ var name=req.query.name;
 c.names.push(name);
 var comment=req.query.comment;
 c.comments.push(comment);
+var carea='';
 for(var i=0;i<c.names.length;i++)
         carea +=`<p>${c.comments[i]}+
         by${c.names[i]}</p><hr/>`;
