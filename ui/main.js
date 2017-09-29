@@ -21,22 +21,27 @@ button.onclick=function(){
     e.preventDefault();
 var request1= new XMLHttpRequest();
   var name =  form.nameInput.value;
+  var comment =  form.comment.value;
     console.log(name);
     request1.onreadystatechange = function(){
       if(request1.readyState===XMLHttpRequest.DONE){
         if(request1.status===200){
-          var names=[];
-        names=JSON.parse(request1.responseText);
+          var c={
+              names:[],
+              comments:[]
+          };
+        c=JSON.parse(request1.responseText);
         var carea='';
-        for(var i=0;i<names.length;i++)
-        carea +='<p>'+names[i]+'</p><hr/>';
+        for(var i=0;i<c.names.length;i++)
+        carea +=`<p>${c.comments[i]}+
+        by${c.names[i]}</p><hr/>`;
         var ul=document.getElementById('carea');
         ul.innerHTML=carea;
        }
      }
      form.reset();
     };
-    request1.open('GET',"/submit-name?name="+name);
+    request1.open('GET',"/submit-name?name="+name+"comment="+comment);
     request1.send(null);
   };
     /*counter=counter+1;
