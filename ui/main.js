@@ -26,17 +26,16 @@ var request1= new XMLHttpRequest();
     request1.onreadystatechange = function(){
       if(request1.readyState===XMLHttpRequest.DONE){
         if(request1.status===200){
-          var c={
+        /*  var c={
               names:[],
               comments:[]
-          };
-        c=JSON.parse(request1.responseText);
-        var carea='';
-        for(var i=0;i<c.names.length;i++)
+          };*/
+        var carea=JSON.parse(request1.responseText)
+        /*for(var i=0;i<c.names.length;i++)
         carea +=`<p>${c.comments[i]}+
-        by${c.names[i]}</p><hr/>`;
-        var ul=document.getElementById('carea');
-        ul.innerHTML=carea;
+        by${c.names[i]}</p><hr/>`;*/
+        var commentarea=document.getElementById('carea');
+        commentarea.innerHTML=carea;
        }
      }
      form.reset();
