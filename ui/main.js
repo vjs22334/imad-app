@@ -17,12 +17,12 @@ button.onclick=function(){
   };
   var form=document.getElementById('comment-form');
   form.onsubmit=function(e){
-    console.log("pressed");
+    
     e.preventDefault();
 var request1= new XMLHttpRequest();
   var nameInput =  form.nameInput.value;
     var name=nameInput.value;
-
+    console.log(name);
     request1.onreadystatechange = function(){
       if(request1.readyState===XMLHttpRequest.DONE){
         if(request1.status===200){
