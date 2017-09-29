@@ -60,11 +60,16 @@ function createtemplate(data)
     </html>`;
     return template;
 }
-var names = [];
+var c = {
+    names: [],
+    comments: []
+};
 app.get('/submit-name',function(req,res){// /submit-name?name=" ";
 var name=req.query.name;
-names.push(name);
-res.send(JSON.stringify(names));
+c.names.push(name);
+var comment=req.query.comment;
+c.comment.push(comment);
+res.send(JSON.stringify(c));
 });
 
 app.get('/:articleName', function (req, res) {
