@@ -27,11 +27,11 @@ var request1= new XMLHttpRequest();
         if(request1.status===200){
           var names=[];
         names=JSON.parse(request1.responseText);
-        var list='';
+        var carea='';
         for(var i=0;i<names.length;i++)
-        list +='<li>'+names[i]+'</li>';
-        var ul=document.getElementById('nameList');
-        ul.innerHTML=list;
+        carea +='<p>'+names[i]+'</p><hr/>';
+        var ul=document.getElementById('carea');
+        ul.innerHTML=carea;
        }
      }
      form.reset();
