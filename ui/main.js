@@ -20,8 +20,7 @@ button.onclick=function(){
     
     e.preventDefault();
 var request1= new XMLHttpRequest();
-  var nameInput =  form.nameInput.value;
-    var name=nameInput.value;
+  var name =  form.nameInput.value;
     console.log(name);
     request1.onreadystatechange = function(){
       if(request1.readyState===XMLHttpRequest.DONE){
