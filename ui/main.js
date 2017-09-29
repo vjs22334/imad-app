@@ -15,11 +15,12 @@ button.onclick=function(){
     request.open('GET',"/counter");
     request.send(null);
   };
-  var sbutton=document.getElementById('submitbtn');
-  sbutton.onclick=function(){
+  var form=document.getElementById('comment-form');
+  form.onsubmit=function(e){
     console.log("pressed");
+    e.preventDefault();
 var request1= new XMLHttpRequest();
-  var nameInput =  document.getElementById('nameInput');
+  var nameInput =  form.nameInput.value;
     var name=nameInput.value;
 
     request1.onreadystatechange = function(){
