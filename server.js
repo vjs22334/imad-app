@@ -71,8 +71,8 @@ var comment=req.query.comment;
 c.comments.push(comment);
 var carea='';
 for(var i=0;i<c.names.length;i++)
-        carea +=`<p>${c.comments[i]}<br>
-        by${c.names[i]}</p><hr/>`;
+        carea +=`<div class="comment">${c.comments[i]}<br>
+        by${c.names[i]}</div><hr/>`;
 res.send(JSON.stringify(carea));
 });
 
