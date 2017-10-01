@@ -109,6 +109,7 @@ app.get('/articles/:articleName', function (req, res) {
             else{
                 var data = result.rows[0];
                 res.send(JSON.stringify(result.rows));
+                console.log(data);
             }
             
             }
