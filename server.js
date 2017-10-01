@@ -99,6 +99,7 @@ res.send(JSON.stringify(carea));
 app.get('/articles/:articleName', function (req, res) {
     var articleName=req.params.articleName;
     var data;
+    console.log(data);
     pool.query("SELECT * FROM articles WHERE title = '"+articleName+"'",function(err,result){
         if(err){
             res.status(500).send(err.toString());
