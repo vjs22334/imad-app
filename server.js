@@ -117,6 +117,7 @@ app.get('/articles/:articleName', function (req, res) {
         }
     );
     res.send(JSON.stringify(data));
+    console.log(data);
  //res.send(createtemplate(data));
 });
 app.get('/ui/main.js',function(req,res){
