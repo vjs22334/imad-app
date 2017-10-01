@@ -9,7 +9,7 @@ var config = {
   user: 'jeyasuryav',
   database: 'jeyasuryav',
   host: 'db.imad.hasura-app.io',
-  password: 'db-jeyasuryav-5272',
+  password: process.env.DB_PASSWORD,
   port: '5432',
     
 };
@@ -96,9 +96,24 @@ for(var i=0;i<c.names.length;i++)
 res.send(JSON.stringify(carea));
 });
 
-app.get('/:articleName', function (req, res) {
+app.get('/articles/:articleName', function (req, res) {
     var articleName=req.params.articleName;
-  res.send(createtemplate(articles[articleName]));
+    pool.query("SELECT * FROM articles WHERE title = '"+articleName+"'",function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            if(result.rows.length===0){
+                res.status(404).send("article not found");
+            }
+            else{
+                var data=result.rows[0];
+            }
+            
+            }
+        }
+    );
+  res.send(createtemplate(data));
 });
 app.get('/ui/main.js',function(req,res){
     res.sendFile(path.join(__dirname,'ui','main.js'));
