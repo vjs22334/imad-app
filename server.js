@@ -107,7 +107,8 @@ app.get('/articles/:articleName', function (req, res) {
                 res.status(404).send("article not found");
             }
             else{
-                var data=result.rows[0];
+                var data = result.rows[0];
+                console.log(JSON.stringify(result.rows));
             }
             
             }
