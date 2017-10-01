@@ -103,18 +103,18 @@ app.get('/articles/:articleName', function (req, res) {
             res.status(500).send(err.toString());
         }
         else{
-            if(result.rows.length===0){
+            if(result.rows.length === 0){
                 res.status(404).send("article not found");
             }
             else{
                 var data = result.rows[0];
-                console.log(JSON.stringify(result.rows));
+                res.send(JSON.stringify(result.rows));
             }
             
             }
         }
     );
-  res.send(createtemplate(data));
+ // res.send(createtemplate(data));
 });
 app.get('/ui/main.js',function(req,res){
     res.sendFile(path.join(__dirname,'ui','main.js'));
