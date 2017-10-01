@@ -9,7 +9,7 @@ var config = {
   database: 'jeyasuryav',
   host: '127.0.0.1',
   password: process.env.DB_PASSWORD,
-  port: 5432,
+  port: '5432',
     
 };
 var pool = new Pool({config});
