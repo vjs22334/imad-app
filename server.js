@@ -108,13 +108,14 @@ app.get('/articles/:articleName', function (req, res) {
             }
             else{
                 var data = result.rows[0];
+                res.send(createtemplate(data));
             }
             
             }
         }
     );
   //  res.send(JSON.stringify(data));
- res.send(createtemplate(data));
+ 
 });
 app.get('/ui/main.js',function(req,res){
     res.sendFile(path.join(__dirname,'ui','main.js'));
