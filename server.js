@@ -109,14 +109,14 @@ app.get('/articles/:articleName', function (req, res) {
             }
             else{
                 data = result.rows[0];
-              //  res.send(JSON.stringify(data));
+              res.send(JSON.stringify(data));
                 //console.log(data);
             }
             
             }
         }
     );
-     res.send(JSON.stringify(data));
+   //  res.send(JSON.stringify(data));
  //res.send(createtemplate(data));
 });
 app.get('/ui/main.js',function(req,res){
