@@ -13,7 +13,7 @@ var config = {
   port: '5432',
     
 };
-var pool = new Pool({config});
+var pool = new Pool(config);
 app.get('/test-db',function(req,res){
     pool.query('SELECT * FROM articles',function(err,result)
     {
