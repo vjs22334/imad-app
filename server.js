@@ -98,7 +98,7 @@ res.send(JSON.stringify(carea));
 
 app.get('/articles/:articleName', function (req, res) {
     var articleName=req.params.articleName;
-    var data
+    var data;
     pool.query("SELECT * FROM articles WHERE title = '"+articleName+"'",function(err,result){
         if(err){
             res.status(500).send(err.toString());
@@ -109,14 +109,14 @@ app.get('/articles/:articleName', function (req, res) {
             }
             else{
                 data = result.rows[0];
-              res.send(JSON.stringify(data));
+              //res.send(JSON.stringify(data));
                 //console.log(data);
             }
             
             }
         }
     );
-   //  res.send(JSON.stringify(data));
+    res.send(JSON.stringify(data));
  //res.send(createtemplate(data));
 });
 app.get('/ui/main.js',function(req,res){
